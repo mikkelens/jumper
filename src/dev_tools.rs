@@ -1,19 +1,14 @@
 //! Development tools for the game. This plugin is only enabled in dev builds.
 
 use bevy::{
-    dev_tools::{
-        states::log_transitions,
-        ui_debug_overlay::{DebugUiPlugin, UiDebugOptions},
-    },
+    dev_tools::ui_debug_overlay::{DebugUiPlugin, UiDebugOptions},
     input::common_conditions::input_just_pressed,
     prelude::*,
 };
 
-use crate::screens::Screen;
-
 pub(super) fn plugin(app: &mut App) {
     // Log `Screen` state transitions.
-    app.add_systems(Update, log_transitions::<Screen>);
+    //    app.add_systems(Update, log_transitions::<Screen>);
 
     // Toggle the debug overlay for UI.
     app.add_plugins(DebugUiPlugin);
