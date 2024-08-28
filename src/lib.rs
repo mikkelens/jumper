@@ -15,10 +15,10 @@ pub struct AppPlugin;
 impl Plugin for AppPlugin {
     fn build(&self, app: &mut App) {
         // Order new `AppStep` variants by adding them here:
-        app.configure_sets(
-            Update,
-            (AppSet::TickTimers, AppSet::RecordInput, AppSet::Update).chain(),
-        );
+        //        app.configure_sets(
+        //            Update,
+        //            (AppSet::TickTimers, AppSet::RecordInput, AppSet::Update).chain(),
+        //        );
 
         // Spawn the main camera.
         app.add_systems(Startup, spawn_camera);
@@ -64,15 +64,15 @@ impl Plugin for AppPlugin {
 /// High-level groupings of systems for the app in the `Update` schedule.
 /// When adding a new variant, make sure to order it in the `configure_sets`
 /// call above.
-#[derive(SystemSet, Debug, Clone, Copy, Eq, PartialEq, Hash, PartialOrd, Ord)]
-enum AppSet {
-    /// Tick timers.
-    TickTimers,
-    /// Record player input.
-    RecordInput,
-    /// Do everything else (consider splitting this into further variants).
-    Update,
-}
+//#[derive(SystemSet, Debug, Clone, Copy, Eq, PartialEq, Hash, PartialOrd, Ord)]
+//enum AppSet {
+//    /// Tick timers.
+//    TickTimers,
+//    /// Record player input.
+//    RecordInput,
+//    /// Do everything else (consider splitting this into further variants).
+//    Update,
+//}
 
 fn spawn_camera(mut commands: Commands) {
     commands.spawn((
