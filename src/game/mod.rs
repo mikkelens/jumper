@@ -186,7 +186,7 @@ fn player_falling_jumping(
         return;
     };
     // brute force testing is adequate for the small amount of platforms existing at once
-    if player_velocity.y <= 0.1
+    if player_velocity.y <= 0.0
         && platform_query
             .iter()
             .any(|(platform_transform, platform_collision_box)| {
